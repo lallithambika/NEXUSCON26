@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>NexusCon Bengaluru '26</title>
+    <script type="text/javascript">
+      // Single Page Apps for GitHub Pages
+      // MIT License
+      // https://github.com/rafgraph/spa-github-pages
+      // This script checks to see if a redirect is present in the query string,
+      // converts it back into the correct url and adds it to the
+      // browser's history using window.history.replaceState(...),
+      // which will cause the browser to load the correct page without a page refresh.
+      (function(l) {
+        if (l.search[1] === '/' ) {
+          var decoded = l.search.slice(1).split('&').map(function(s) { 
+            return s.replace(/~and~/g, '&')
+          }).join('?');
+          window.history.replaceState(null, null,
+              l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      }(window.location))
+    </script>
+    <script type="text/javascript">
+      // If the page is not found, redirect to the root with the current path as a query string
+      var path = window.location.pathname;
+      var repo = "/NEXUSCON-26";
+      if (path.indexOf(repo) === 0) {
+        path = path.slice(repo.length);
+      }
+      window.location.replace(repo + "/?/" + path.replace(/&/g, '~and~') + window.location.hash);
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
